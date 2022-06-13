@@ -1,0 +1,74 @@
+.todo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.todo_dark {
+  border-bottom: 1px solid var(--VeryDarkGrayishBlue1);
+}
+
+.todo_light {
+  border-bottom: 1px solid var(--LightGrayishBlue1);
+}
+
+.toggle_text {
+  display: flex;
+  align-items: center;
+}
+
+.toggle_btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.toggle_btn svg {
+  color: #fff;
+  font-size: 20px;
+}
+
+.toggle_btn_dark {
+  border: 1px solid var(--VeryDarkGrayishBlue3);
+}
+
+.toggle_btn_light {
+  border: 1px solid var(--VeryLightGrayishBlue);
+}
+
+.todo input {
+  width: 300px;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0 0 0 1rem;
+  font-size: clamp(14px, 1.5vw, 17px);
+  word-wrap: break-word;
+}
+
+.todo input.dark {
+  color: var(--VeryLightGrayishBlue);
+}
+
+.todo input.light {
+  color: var(--VeryDarkGrayishBlue3);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  border: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  transform: scale(1.15);
+}
