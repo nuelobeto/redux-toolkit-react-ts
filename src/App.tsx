@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import { useAppDispatch, useAppSelector } from "./app/hooks";
@@ -16,10 +16,21 @@ type NewTodoType = {
 };
 
 function App() {
-  const todos = useAppSelector((state) => state.todo.todos);
+  const todos = useAppSelector((state) => state.todos);
+
   const dispatch = useAppDispatch();
   const [task, setTask] = useState("");
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const mode = localStorage.getItem("darkmode");
+    if (mode) {
+      return JSON.parse(mode);
+    } else {
+      return true;
+    }
+  });
+  useEffect(() => {
+    localStorage.setItem("darkmode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const activeTodos = todos.filter((todo) => todo.completed === false);
 
