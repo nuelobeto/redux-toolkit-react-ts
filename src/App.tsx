@@ -60,7 +60,7 @@ function App() {
       <div className="container">
         <header>
           <div className="box">
-            <h1>TODO</h1>
+            <h1>TodoPal</h1>
             {darkMode ? (
               <MdLightMode onClick={() => setDarkMode(false)} />
             ) : (
